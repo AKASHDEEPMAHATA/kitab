@@ -150,7 +150,7 @@ sr.reveal(`.steps__card, .product__card, .questions__group, .footer`,{interval: 
 
 // contact form - firebase
 
-const firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyB5GehVo99OEOrQlh_gVm8sRD-UCIZ8pU0",
     authDomain: "kitab-website-contact-form.firebaseapp.com",
     databaseURL: "https://kitab-website-contact-form-default-rtdb.firebaseio.com",
@@ -164,8 +164,7 @@ const firebaseConfig = {
 
   firebase.initializeApp(firebaseConfig);
 
-  var messagesRef = firebase.database()
-  .ref('Contact form data');
+  var messagesRef = firebase.database().ref('Contact form data');
   
   document.getElementById('contactForm')
   .addEventListener('submit', submitForm);
@@ -176,7 +175,7 @@ const firebaseConfig = {
   // Get values
 
   var email = getInputVal('email');
-  var sub = getInputVal('subject');
+  var subject = getInputVal('subject');
   var message = getInputVal("message");
   
   saveMessage(email, subject , message);
@@ -189,7 +188,7 @@ const firebaseConfig = {
   }
   
   // Save message to firebase
-  function saveMessage(email, subject , message) {
+  function saveMessage(email , subject , message) {
   var newMessageRef = messagesRef.push();
   newMessageRef.set({
     email: email,
