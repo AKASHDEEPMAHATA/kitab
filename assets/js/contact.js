@@ -1,6 +1,6 @@
 // contact form - firebase
 
-var firebaseConfig = {
+const firebaseConfig = {
     apiKey: "AIzaSyB5GehVo99OEOrQlh_gVm8sRD-UCIZ8pU0",
     authDomain: "kitab-website-contact-form.firebaseapp.com",
     databaseURL: "https://kitab-website-contact-form-default-rtdb.firebaseio.com",
